@@ -16,6 +16,8 @@ WVoice.Compatibilities["YOUR GLOBAL TABLE"] = function(listener, talker)
     end
 
 end
+
+/!\ - IsValid & Alive checks are already done internally
 ]]--
 
 -- GDrugz Phone by SlownLS : Private addon
@@ -51,5 +53,12 @@ WVoice.Compatibilities["BES"] = function(listener, talker)
         if listener:GetPos():DistToSqr(talker:GetPos()) < 100000 then 
             return true, true 
         end
+    end
+end
+
+-- SPhone by SGroup : https://www.gmodstore.com/market/view/6159
+WVoice.Compatibilities["SPhone"] = function(listener, talker)
+    if IsValid(listener.call_target) and listener.call_target == talker then
+        return (talker:HasWeapon("sphone") and listener:HasWeapon("sphone"))
     end
 end
