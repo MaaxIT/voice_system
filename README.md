@@ -1,4 +1,4 @@
-# voice_system
+# Voice System
 An advanced voice system for Garry's Mod !
 
 Hey!
@@ -11,6 +11,7 @@ Servers using the Voice System will then automatically download the code you pro
 <h1>As a creator, what should I do ?</h1>
 Make a simple pull request in the only file of the project and add the code of your hook <b>PlayerCanHearPlayersVoice</b>.
 If the function is returning true then the Voice System is no longer working until the return value changes.
+
 
 If you want more details about how the system works, please contact me on the Discord you'll find on my GitHub profile.
 Thanks !
