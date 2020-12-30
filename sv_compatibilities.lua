@@ -53,3 +53,21 @@ WVoice.Compatibilities["BES"] = function(listener, talker)
         end
     end
 end
+
+WVoice.Compatibilities["SPhone"] = function(listener, talker)
+     if IsValid(listener.call_target) && IsValid(talker.call_target) then
+        
+        if listener.call_target == talker && talker.call_target == listener then
+
+            if talker:Alive() && listener:Alive() then
+                if talker:HasWeapon("sphone") then
+                    return true, false
+                end
+                if listener:HasWeapon("sphone") then
+                    return true, false
+                end
+            end
+
+        end
+    end
+end
