@@ -62,3 +62,13 @@ WVoice.Compatibilities["SPhone"] = function(listener, talker)
         return (talker:HasWeapon("sphone") and listener:HasWeapon("sphone"))
     end
 end
+
+-- Realistic Radio by Kobralost : https://www.gmodstore.com/market/view/realistic-radio-the-most-advanced-radio-system
+WVoice.Compatibilities["Realistic_Radio"] = function(listener, talker)
+    if (talker:GetFrequencies() ~= 0) and (listener:GetFrequencies()..listener:GetDispatch() == talker:GetFrequencies()..talker:GetDispatch()) then
+        local activeWeapon = talker:GetActiveWeapon()
+        if IsValid(activeWeapon) and activeWeapon:GetClass() == "weapon_rdo_radio" then
+            return (IsValid(activeWeapon) and activeWeapon:GetClass() == "weapon_rdo_radio")
+        end
+    end
+end
